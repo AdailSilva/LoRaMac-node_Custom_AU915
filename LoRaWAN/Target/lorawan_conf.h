@@ -74,9 +74,11 @@ extern "C" {
 /**
   * \brief Limits the number usable channels by default for AU915, CN470 and US915 regions
   * \note the default channel mask with this option activates the first 8 channels. \
-  *       this default mask can be modified in the RegionXXXXXInitDefaults function associated with the active region.
+  * This default mask can be modified in the RegionXXXXXInitDefaults function associated with the active region.
+  * HYBRID_ENABLED = X, LA915A Channels: 0 to 7 (915.2 MHz to 916.6 MHz) -> https://ns.docs.everynet.io/channel_plans/LA915A.html - TODO: Verificar as frequências.
+  * HYBRID_ENABLED = 2, AU915 Channels: 8 to 15 + 65 (916.8 MHz to 918.2 MHz + 917.5 MHz) -> https://www.thethingsnetwork.org/docs/lorawan/frequency-plans/
   */
-#define HYBRID_ENABLED                                  1
+#define HYBRID_ENABLED                                  2
 
 /**
   * \brief Define the read access of the keys in memory
